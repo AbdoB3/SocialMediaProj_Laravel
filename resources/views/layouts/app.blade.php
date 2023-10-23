@@ -54,7 +54,10 @@
         </div>
         <div class="col-12 col-sm-6 col-md-4 col-lg-3 pl-md-5">
             <div class="text-center">
-                <img src="/svg/group.png" style="max-height: 30px;" alt="">
+           
+            <a href="{{ route('send.message') }}">
+                <img src="/svg/messenger.png" style="max-height: 30px;" alt="">
+                </a>
             </div>
         </div>
     </div>
@@ -93,7 +96,7 @@
     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
  @auth
 
-            <a class="dropdown-item" href="{{ route('profile.edit', ['user' => Auth::user()->id]) }}">
+            <a class="dropdown-item" href="{{ route('profile.index', ['user' => Auth::user()->id]) }}">
             <div class="d-flex">
                 <div>
              @if (!empty(Auth::user()->profile->image))

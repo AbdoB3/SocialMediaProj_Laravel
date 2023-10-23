@@ -1,3 +1,4 @@
+
 {{-- ---------------------- Image modal box ---------------------- --}}
 <div id="imageModalBox" class="imageModal">
     <span class="imageModal-close">&times;</span>
@@ -40,7 +41,7 @@
                       {{-- Udate profile avatar --}}
                       <div class="avatar av-l upload-avatar-preview chatify-d-flex"
                       style="background-image: url('{{ Chatify::getUserWithAvatar(Auth::user())->avatar }}');"
-                      ></div>
+                      ></div>hjhjhhjkhjkhjkh
                       <p class="upload-avatar-details"></p>
                       <label class="app-btn a-btn-primary update" style="background-color:{{$messengerColor}}">
                           Upload New

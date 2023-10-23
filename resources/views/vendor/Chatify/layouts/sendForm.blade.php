@@ -1,3 +1,4 @@
+
 <div class="messenger-sendCard">
     <form id="message-form" method="POST" action="{{ route('send.message') }}" enctype="multipart/form-data">
         @csrf

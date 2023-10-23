@@ -40,15 +40,23 @@ class MessagesController extends Controller
      * @param int $id
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function index( $id = null)
-    {
-        $messenger_color = Auth::user()->messenger_color;
-        return view('Chatify::pages.app', [
-            'id' => $id ?? 0,
-            'messengerColor' => $messenger_color ? $messenger_color : Chatify::getFallbackColor(),
-            'dark_mode' => Auth::user()->dark_mode < 1 ? 'light' : 'dark',
-        ]);
-    }
+     // Adjust the model namespace as needed
+
+     public function index($id = null)
+     {
+         $messenger_color = Auth::user()->messenger_color;
+     
+         // Retrieve a list of users with their profiles
+         $users = User::with('profile')->get();
+     
+         return view('Chatify::pages.app', [
+             'id' => $id ?? 0,
+             'messengerColor' => $messenger_color ? $messenger_color : Chatify::getFallbackColor(),
+             'dark_mode' => Auth::user()->dark_mode < 1 ? 'light' : 'dark',
+             'users' => $users, // Pass the list of users to the view
+         ]);
+     }
+    
 
 
     /**

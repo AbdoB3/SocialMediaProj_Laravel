@@ -1,3 +1,5 @@
+@extends('layouts.app')
+
 <title>{{ config('chatify.name') }}</title>
 
 {{-- Meta tags --}}

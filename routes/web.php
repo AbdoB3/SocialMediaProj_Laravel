@@ -43,7 +43,6 @@ Route::delete('unlike',[App\Http\Controllers\LikesController::class, 'unlike'])-
 
 Route::post('/add/comment/{postId}',[App\Http\Controllers\postcountroller::class, 'Comment'])->middleware('auth')->name('add.comment');
 Route::get('/show/comment/',[App\Http\Controllers\postcountroller::class, 'ShowComment'])->middleware('auth')->name('show.comment');
-
 Route::any('follow',[App\Http\Controllers\FollowerController::class, 'follow'])->middleware('auth')->name('follow');
 
 Route::get('/load-more-comments', [App\Http\Controllers\homecountroller::class,'loadMoreComments'])->name('more.comments');

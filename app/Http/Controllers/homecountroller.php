@@ -40,9 +40,11 @@ class homecountroller extends Controller
         return response()->json(['html' => $html]);
     }
     
+public function send (User $user){
+    $user = auth()->user();
+    return view('vendor.Chatify.info', compact('user',));
 
 
-
-   
+}
    
 }
